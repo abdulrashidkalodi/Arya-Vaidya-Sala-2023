@@ -1,0 +1,45 @@
+<div >
+  <img id="image" src="https://img.etimg.com/thumb/msid-87235548,width-1200,height-900,imgsize-111616,resizemode-8,quality-100/industry/banking/finance/banking/will-mint-streets-digital-currency-ambition-break-the-banking-system.jpg " alt="not found ">
+
+  <div class="form">
+    <div>
+      <img class="loginimg"
+        src="https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1786166.jpg"
+        alt="">
+    </div>
+    <h3 style="text-align: center;">Login here !</h3>
+    <form [formGroup]="logIn" (ngSubmit)="log()" class="details">
+      <p>Patient Name</p>
+      <input  formControlName="pn" name="pn" style="width: 90%; border-radius: 10px; " type="text"
+        placeholder="enter patient name ">
+      <!-- NMAE VALIDATION -->
+      <div *ngIf="this.logIn.get('pn')?.errors&&this.logIn.get('pn')?.touched;"  style="color: red; ">
+        invalide Patient Name
+      </div>
+      <p>Password</p>
+      <input formControlName="pass" name="pass" style="width: 90%; border-radius: 10px; " type="password"
+        placeholder="enter your password "><br>
+
+      <div *ngIf="this.logIn.get('pass')?.errors&&this.logIn.get('pass')?.touched;" style="color: red; ">
+        invalide password
+      </div>
+
+      <div style="color: red;"><b></b></div>
+
+      <button  type="submit" style=" margin-top: 10px; margin-left: 100px; border-radius: 10px; background-color: red;" >
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" ></span>
+        LOGIN
+      </button> &nbsp;
+      <br>
+
+      <div style=" text-align: center; ">
+        <a routerLink="/register">register?</a>
+        <br>
+      </div>
+    </form>
+
+  </div>
+
+</div>
+
+
